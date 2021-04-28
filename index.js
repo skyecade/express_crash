@@ -1,18 +1,18 @@
 // Bring in express and other node modules
 const express = require('express');
 const path = require('path');
+const members = require('./Members');
 
 // Intialize instance of express called app
 const app = express();
 
-// Set a route
-app.get('/test', (req, res) => {
-    res.send('<h1>TEST</h1>');
-});
 
-app.get('/about', (req, res) => {
-    res.send('<h1>This is all about me</h1>');
-});
+
+// Setting a routes
+
+// This route gets all members
+app.get('/api/members', (req, res) => res.json(members));
+
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
