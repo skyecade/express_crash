@@ -9,7 +9,7 @@ const members = [
     },
     {
         id:2,
-        name: 'Meagan Lear',
+        name: 'Meagan Leard',
         email: 'meaganleard@gmail.com',
         status: 'inactive',
     },
