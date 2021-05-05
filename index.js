@@ -1,17 +1,12 @@
 // Bring in express and other node modules
 const express = require('express');
 const path = require('path');
-const { nextTick } = require('process');
+// const { nextTick } = require('process'); not sure where this came from
 const members = require('./Members');
+const logger = require('./middleware/logger');
 
 // Intialize instance of express called app
 const app = express();
-
-// Creating Middleware
-const logger = (req, res, next) => {
-    console.log('Hello!');
-    next();
-}
 
 // Init Middleware
 app.use(logger);
