@@ -1,7 +1,6 @@
 // Bring in express and other node modules
 const express = require('express');
 const path = require('path');
-// const { nextTick } = require('process'); not sure where this came from
 const members = require('./Members');
 const logger = require('./middleware/logger');
 
