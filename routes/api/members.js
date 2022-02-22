@@ -33,6 +33,8 @@ router.post('/', (req, res) => {
 
     members.push(newMember);
     res.json(members);
+    // Comment above and uncomment below to use template.
+    //res.redirect('/'); 
 });
 
 // Udate Member
