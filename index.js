@@ -1,6 +1,7 @@
 // Bring in express and other node modules
 const express = require('express');
 const path = require('path');
+const exphbs = require('express-handlebars');
 const logger = require('./middleware/logger');
 
 // Intialize instance of express called app
@@ -8,10 +9,18 @@ const app = express();
 
 // Init Middleware
 // app.use(logger);
+ 
+// Handlebars Middleware
+app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
 
 // Body Parser Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
+
+// Homepage Route
+app.get('/', (req, res) => res.render('index'));
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
