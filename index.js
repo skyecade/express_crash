@@ -20,21 +20,11 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
-
-
-
-
 // Homepage Route
 app.get('/', (req, res) => res.render('index', {
     title: 'Member App',
     members
 }));
-
-
-
-
-
-
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
